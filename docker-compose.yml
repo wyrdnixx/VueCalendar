@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  client:
+    image: node:latest              
+    command: sh -c 'echo "fooo" && yarn install && yarn run serve'
+    #command: sh -c 'echo "fooo" && pwd &&ls -al '
+    working_dir: /opt/calendar
+    volumes:
+      - ./calendar/app:/opt/calendar
+    ports:      
+      - "81:8080" 
